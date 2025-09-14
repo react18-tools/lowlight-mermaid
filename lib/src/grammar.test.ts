@@ -1,6 +1,6 @@
 // tests/grammar.test.ts
 import { describe, it, expect } from "vitest";
-import mermaidGrammar from "./grammar";
+import { mermaidGrammar } from "./grammar";
 import hljs from "highlight.js/lib/core";
 
 hljs.registerLanguage("mermaid", mermaidGrammar);
