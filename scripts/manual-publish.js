@@ -105,18 +105,18 @@ if (latest[0] < current[0]) {
 }
 
 const reTag = isLatest ? "" : ` && npm dist-tag add ${name}@${LATEST_VERSION} latest`;
-/** Create release */
 try {
+  /** Create release */
   const publishCmd = `cd lib && pnpm build && npm publish ${provenance} --access public${tag && ` --tag ${tag}`}`;
   execSync(publishCmd + reTag);
+
+  /** Create GitHub release */
+  execSync(
+    `gh release create ${NEW_VERSION} --generate-notes${isLatestRelease ? " --latest" : ""} -n "$(sed '1,/^## /d;/^## /,$d' lib/CHANGELOG.md)" --title "Release v${NEW_VERSION}"`,
+  );
 } catch (e) {
   console.log({ e });
 }
-
-/** Create GitHub release */
-execSync(
-  `gh release create ${NEW_VERSION} --generate-notes${isLatestRelease ? " --latest" : ""} -n "$(sed '1,/^## /d;/^## /,$d' lib/CHANGELOG.md)" --title "Release v${NEW_VERSION}"`,
-);
 
 try {
   // Publish canonical packages
