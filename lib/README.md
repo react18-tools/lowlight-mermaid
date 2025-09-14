@@ -1,15 +1,15 @@
-# React18 Loaders <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 40px"/>
+# Lowlight Mermaid <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 40px"/>
 
-[![test](https://github.com/react18-tools/turborepo-template/actions/workflows/test.yml/badge.svg)](https://github.com/react18-tools/turborepo-template/actions/workflows/test.yml)
-[![Maintainability](https://qlty.sh/gh/react18-tools/projects/turborepo-template/maintainability.svg)](https://qlty.sh/gh/react18-tools/projects/turborepo-template)
-[![codecov](https://codecov.io/gh/react18-tools/turborepo-template/graph/badge.svg)](https://codecov.io/gh/react18-tools/turborepo-template)
-[![Version](https://img.shields.io/npm/v/react18-loaders.svg?colorB=green)](https://www.npmjs.com/package/react18-loaders)
-[![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/react18-loaders.svg)](https://www.npmjs.com/package/react18-loaders)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/react18-loaders)
+[![test](https://github.com/react18-tools/lowlight-mermaid/actions/workflows/test.yml/badge.svg)](https://github.com/react18-tools/lowlight-mermaid/actions/workflows/test.yml)
+[![Maintainability](https://qlty.sh/gh/react18-tools/projects/lowlight-mermaid/maintainability.svg)](https://qlty.sh/gh/react18-tools/projects/lowlight-mermaid)
+[![codecov](https://codecov.io/gh/react18-tools/lowlight-mermaid/graph/badge.svg)](https://codecov.io/gh/react18-tools/lowlight-mermaid)
+[![Version](https://img.shields.io/npm/v/lowlight-mermaid.svg?colorB=green)](https://www.npmjs.com/package/lowlight-mermaid)
+[![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/lowlight-mermaid.svg)](https://www.npmjs.com/package/lowlight-mermaid)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/lowlight-mermaid)
 
-React18 Loaders is a comprehensive library designed to unlock the full potential of React 18 server components. It provides customizable loading animation components and a fullscreen loader container, seamlessly integrating with React and Next.js.
+Lowlight Mermaid is a comprehensive library designed to unlock the full potential of React 18 server components. It provides customizable loading animation components and a fullscreen loader container, seamlessly integrating with React and Next.js.
 
-✅ Fully Treeshakable (import from `react18-loaders/client/loader-container`)
+✅ Fully Treeshakable (import from `lowlight-mermaid/client/loader-container`)
 
 ✅ Fully TypeScript Supported
 
@@ -17,48 +17,48 @@ React18 Loaders is a comprehensive library designed to unlock the full potential
 
 ✅ Compatible with all React 18 build systems/tools/frameworks
 
-✅ Documented with [Typedoc](https://react18-tools.github.io/turborepo-template) ([Docs](https://react18-tools.github.io/turborepo-template))
+✅ Documented with [Typedoc](https://react18-tools.github.io/lowlight-mermaid) ([Docs](https://react18-tools.github.io/lowlight-mermaid))
 
 ✅ Examples for Next.js, and Vite
 
-> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Star [this repository](https://github.com/react18-tools/turborepo-template) and share it with your friends.
+> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Star [this repository](https://github.com/react18-tools/lowlight-mermaid) and share it with your friends.
 
 ## Getting Started
 
 ### Installation
 
 ```bash
-pnpm add react18-loaders
+pnpm add lowlight-mermaid
 ```
 
 **_or_**
 
 ```bash
-npm install react18-loaders
+npm install lowlight-mermaid
 ```
 
 **_or_**
 
 ```bash
-yarn add react18-loaders
+yarn add lowlight-mermaid
 ```
 
-## Want Lite Version? [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react18-loaders-lite)](https://www.npmjs.com/package/react18-loaders-lite) [![Version](https://img.shields.io/npm/v/react18-loaders-lite.svg?colorB=green)](https://www.npmjs.com/package/react18-loaders-lite) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/react18-loaders-lite.svg)](https://www.npmjs.com/package/react18-loaders-lite)
+## Want Lite Version? [![npm bundle size](https://img.shields.io/bundlephobia/minzip/lowlight-mermaid-lite)](https://www.npmjs.com/package/lowlight-mermaid-lite) [![Version](https://img.shields.io/npm/v/lowlight-mermaid-lite.svg?colorB=green)](https://www.npmjs.com/package/lowlight-mermaid-lite) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/lowlight-mermaid-lite.svg)](https://www.npmjs.com/package/lowlight-mermaid-lite)
 
 ```bash
-pnpm add react18-loaders-lite
-```
-
-**or**
-
-```bash
-npm install react18-loaders-lite
+pnpm add lowlight-mermaid-lite
 ```
 
 **or**
 
 ```bash
-yarn add react18-loaders-lite
+npm install lowlight-mermaid-lite
+```
+
+**or**
+
+```bash
+yarn add lowlight-mermaid-lite
 ```
 
 > You need `r18gs` as a peer-dependency
@@ -69,20 +69,20 @@ You can import styles globally or within specific components.
 
 ```css
 /* globals.css */
-@import "react18-loaders/dist";
+@import "lowlight-mermaid/dist";
 ```
 
 ```tsx
 // layout.tsx
-import "react18-loaders/dist/index.css";
+import "lowlight-mermaid/dist/index.css";
 ```
 
 For selective imports:
 
 ```css
 /* globals.css */
-@import "react18-loaders/dist/client"; /** required if you are using LoaderContainer */
-@import "react18-loaders/dist/server/bars/bars1";
+@import "lowlight-mermaid/dist/client"; /** required if you are using LoaderContainer */
+@import "lowlight-mermaid/dist/server/bars/bars1";
 ```
 
 ### Usage
@@ -90,14 +90,14 @@ For selective imports:
 Using loaders is straightforward.
 
 ```tsx
-import { Bars1 } from "react18-loaders/dist/server/bars/bars1";
+import { Bars1 } from "lowlight-mermaid/dist/server/bars/bars1";
 
 export default function MyComponent() {
   return someCondition ? <Bars1 /> : <>Something else...</>;
 }
 ```
 
-For detailed API and options, refer to [the API documentation](https://react18-tools.github.io/turborepo-template).
+For detailed API and options, refer to [the API documentation](https://react18-tools.github.io/lowlight-mermaid).
 
 **Using LoaderContainer**
 
@@ -111,7 +111,7 @@ For detailed API and options, refer to [the API documentation](https://react18-t
 
 ```tsx
 // some other page or component
-import { useLoader } from "react18-loaders/dist/hooks";
+import { useLoader } from "lowlight-mermaid/dist/hooks";
 
 export default MyComponent() {
 	const { setLoading } = useLoader();
@@ -128,7 +128,7 @@ export default MyComponent() {
 
 This library is licensed under the MPL-2.0 open-source license.
 
-> This package also serves as an example demonstrating how to build and publish a `React.js` library compatible with React Server Components.
+
 
 > <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Please enroll in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsor](https://github.com/sponsors/mayank1513) our work.
 
