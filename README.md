@@ -7,25 +7,21 @@
 [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/lowlight-mermaid.svg)](https://www.npmjs.com/package/lowlight-mermaid)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/lowlight-mermaid)
 
-Lowlight Mermaid is a comprehensive library designed to unlock the full potential of React 18 server components. It provides customizable loading animation components and a fullscreen loader container, seamlessly integrating with React and Next.js.
+> **TypeScript grammar definitions for Mermaid syntax highlighting**
+> Compatible with **highlight.js** and **lowlight**, designed for editors, markdown renderers, and converters.
 
-✅ Fully Treeshakable (import from `lowlight-mermaid/client/loader-container`)
+---
 
-✅ Fully TypeScript Supported
+## ✨ Features
 
-✅ Leverages the power of React 18 Server components
+- 📦 **No runtime bloat** — ships only grammar definitions
+- ⚡ Plug-and-play with [`highlight.js`](https://highlightjs.org/) / [`lowlight`](https://github.com/wooorm/lowlight)
+- 🔧 Full **TypeScript types** included
+- 🛠 Reusable across **editors, docs, converters** (e.g. [`@tiptap/extension-code-block-lowlight`](https://tiptap.dev) or [`mdast2docx`](https://github.com/react18-tools/mdast2docx))
 
-✅ Compatible with all React 18 build systems/tools/frameworks
+---
 
-✅ Documented with [Typedoc](https://react18-tools.github.io/lowlight-mermaid) ([Docs](https://react18-tools.github.io/lowlight-mermaid))
-
-✅ Examples for Next.js, and Vite
-
-> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Star [this repository](https://github.com/react18-tools/lowlight-mermaid) and share it with your friends.
-
-## Getting Started
-
-### Installation
+## 🚀 Install
 
 ```bash
 pnpm add lowlight-mermaid
@@ -43,95 +39,47 @@ npm install lowlight-mermaid
 yarn add lowlight-mermaid
 ```
 
-## Want Lite Version? [![npm bundle size](https://img.shields.io/bundlephobia/minzip/lowlight-mermaid-lite)](https://www.npmjs.com/package/lowlight-mermaid-lite) [![Version](https://img.shields.io/npm/v/lowlight-mermaid-lite.svg?colorB=green)](https://www.npmjs.com/package/lowlight-mermaid-lite) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/lowlight-mermaid-lite.svg)](https://www.npmjs.com/package/lowlight-mermaid-lite)
+---
 
-```bash
-pnpm add lowlight-mermaid-lite
+## 📖 Usage
+
+```ts
+import { mermaidGrammar } from "lowlight-mermaid";
+import hljs from "highlight.js/lib/core";
+
+hljs.registerLanguage("mermaid", mermaidGrammar);
+
+const code = `flowchart TD
+  A[Christmas] -->|Get money| B(Go shopping)
+  B --> C{Let me think}
+  C -->|One| D[Laptop]
+  C -->|Two| E[iPhone]
+  C -->|Three| F[fa:fa-car Car]`;
+
+const result = hljs.highlight(code, { language: "mermaid" });
+
+console.log(result.value);
 ```
 
-**or**
+---
 
-```bash
-npm install lowlight-mermaid-lite
-```
+## 🙏 Acknowledgments
 
-**or**
+- [highlight.js](https://highlightjs.org/) — core highlighting engine
+- [lowlight](https://github.com/wooorm/lowlight) — AST-friendly wrapper
 
-```bash
-yarn add lowlight-mermaid-lite
-```
+---
 
-> You need `r18gs` as a peer-dependency
+## 📜 License
 
-### Import Styles
+Licensed under **MPL-2.0** open-source license.
 
-You can import styles globally or within specific components.
+---
 
-```css
-/* globals.css */
-@import "lowlight-mermaid/dist";
-```
-
-```tsx
-// layout.tsx
-import "lowlight-mermaid/dist/index.css";
-```
-
-For selective imports:
-
-```css
-/* globals.css */
-@import "lowlight-mermaid/dist/client"; /** required if you are using LoaderContainer */
-@import "lowlight-mermaid/dist/server/bars/bars1";
-```
-
-### Usage
-
-Using loaders is straightforward.
-
-```tsx
-import { Bars1 } from "lowlight-mermaid/dist/server/bars/bars1";
-
-export default function MyComponent() {
-  return someCondition ? <Bars1 /> : <>Something else...</>;
-}
-```
-
-For detailed API and options, refer to [the API documentation](https://react18-tools.github.io/lowlight-mermaid).
-
-**Using LoaderContainer**
-
-`LoaderContainer` is a fullscreen component. You can add this component directly in your layout and then use `useLoader` hook to toggle its visibility.
-
-```tsx
-// layout.tsx
-<LoaderContainer />
-	 ...
-```
-
-```tsx
-// some other page or component
-import { useLoader } from "lowlight-mermaid/dist/hooks";
-
-export default MyComponent() {
-	const { setLoading } = useLoader();
-	useCallback(()=>{
-		setLoading(true);
-		...do some work
-		setLoading(false);
-	}, [])
-	...
-}
-```
-
-## License
-
-This library is licensed under the MPL-2.0 open-source license.
-
-
-
-> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Please enroll in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsor](https://github.com/sponsors/mayank1513) our work.
-
-<hr />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" height="20"/>
+  <br/>
+  Support my work via <a href="https://github.com/sponsors/mayank1513">GitHub Sponsors</a> or explore <a href="https://mayank-chaudhari.vercel.app/courses">courses</a>.
+</p>
 
 <p align="center" style="text-align:center">with 💖 by <a href="https://mayank-chaudhari.vercel.app" target="_blank">Mayank Kumar Chaudhari</a></p>
