@@ -1,7 +1,7 @@
 const { execSync } = require("child_process");
 
 // Publish canonical packages
-[].forEach(pkg => {
+["highlight-mermaid", "highlight.js-mermaid", "hljs-mermaid"].forEach(pkg => {
   try {
     execSync(
       `sed -i -e "s/name.*/name\\": \\"${pkg.replace(/\//g, "\\\\/")}\\",/" lib/package.json`,

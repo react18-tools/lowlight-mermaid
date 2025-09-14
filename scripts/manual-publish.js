@@ -106,8 +106,12 @@ if (latest[0] < current[0]) {
 
 const reTag = isLatest ? "" : ` && npm dist-tag add ${name}@${LATEST_VERSION} latest`;
 /** Create release */
-const publishCmd = `cd lib && pnpm build && npm publish ${provenance} --access public${tag && ` --tag ${tag}`}`;
-execSync(publishCmd + reTag);
+try {
+  const publishCmd = `cd lib && pnpm build && npm publish ${provenance} --access public${tag && ` --tag ${tag}`}`;
+  execSync(publishCmd + reTag);
+} catch (e) {
+  console.log({ e });
+}
 
 /** Create GitHub release */
 execSync(
@@ -120,4 +124,3 @@ try {
 } catch {
   console.error("Failed to publish canonical packages");
 }
-
